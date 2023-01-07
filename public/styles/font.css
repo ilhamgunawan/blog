@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Haskoy';
+  src: url('/fonts/Haskoy-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Haskoy';
+  src: url('/fonts/Haskoy-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Haskoy';
+  src: url('/fonts/Haskoy-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Haskoy';
+  src: url('/fonts/Haskoy-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Haskoy';
+  src: url('/fonts/Haskoy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Haskoy';
+  src: url('/fonts/Haskoy-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Haskoy';
+  src: url('/fonts/Haskoy-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Haskoy';
+  src: url('/fonts/Haskoy-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
