@@ -34,3 +34,5 @@ yarn-error.log*
 .mdx-data
 
 /public/sitemap.xml
+
+.swc
