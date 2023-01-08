@@ -1,7 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import renderToString from "next-mdx-remote/render-to-string";
-import { MdxRemote } from "next-mdx-remote/types";
-import hydrate from "next-mdx-remote/hydrate";
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import matter from "gray-matter";
 import { fetchPostContent, getPostsByYear, PostByYear } from "../../lib/posts";
 import fs from "fs";
@@ -19,7 +18,7 @@ export type Props = {
   tags: string[];
   author: string;
   description?: string;
-  source: MdxRemote.Source;
+  source: MDXRemoteSerializeResult;
   postsByYear: PostByYear[];
 };
 
@@ -40,7 +39,6 @@ export default function PostPage({
   source,
   postsByYear,
 }: Props) {
-  const content = hydrate(source, { components })
   return (
     <PostLayout
       title={title}
@@ -51,7 +49,7 @@ export default function PostPage({
       description={description}
       postsByYear={postsByYear}
     >
-      {content}
+      <MDXRemote {...source} components={components} />
     </PostLayout>
   )
 }
@@ -70,8 +68,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { content, data } = matter(source, {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object }
   });
-  const mdxSource = await renderToString(content, { components, scope: data });
-  const metaDescription = mdxSource.renderedOutput.slice(0, 150) + "...";
+  const mdxSource = await serialize(content);
+  const metaDescription = content.replace('\n', '').slice(0, 150) + "...";
   const plainDescription = metaDescription.replace(/(<([^>]+)>)/gi, "");
   const postsByYear = getPostsByYear();
   return {
