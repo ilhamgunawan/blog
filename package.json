@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build && next-sitemap",
     "start": "next start",
-    "test": "jest --watch --verbose --coverage",
+    "test": "jest --verbose --coverage",
     "test:ci": "jest --ci",
     "clean:build": "rm -rf .next && rm -rf .swc && rm -rf coverage",
     "clean": "rm -rf node_modules"
