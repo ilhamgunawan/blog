@@ -17,9 +17,10 @@ export default function HomeArticleItem({ post }: Props) {
         href={`/posts/${post.slug}`}
         css={linkStyle}
         className="font-medium text-lg text-gray-700 border-b-2 border-green-300 border-opacity-0 hover:border-opacity-100 hover:text-green-400"
-        title={post.title}  
+        title={post.title}
+        data-testid="latest-post-item"
       >
-        {getArticleIcon(post.tags)} <Date date={parseISO(post.date)} />: {post.title}
+        {"📝"} <Date date={parseISO(post.date)} />: {post.title}
       </Link>
     </li>
   );
@@ -34,18 +35,18 @@ const linkStyle = css`
   -webkit-box-orient: vertical !important;
 `;
 
-function getArticleIcon(tags: string[]) {
-  if (tags.includes("article")) {
-    return `📝`;
-  } else if (tags.includes("document")) {
-    return `📕`;
-  } else if (tags.includes("projects")) {
-    return `👨🏻‍💻`;
-  } else if (tags.includes("works")) {
-    return `👨🏻‍💻`;
-  } else if (tags.includes("dev")) {
-    return `🛠️`;
-  } else {
-    return `📝`;
-  }
-}
+// function getArticleIcon(tags: string[]) {
+//   if (tags.includes("article")) {
+//     return `📝`;
+//   } else if (tags.includes("document")) {
+//     return `📕`;
+//   } else if (tags.includes("projects")) {
+//     return `👨🏻‍💻`;
+//   } else if (tags.includes("works")) {
+//     return `👨🏻‍💻`;
+//   } else if (tags.includes("dev")) {
+//     return `🛠️`;
+//   } else {
+//     return `📝`;
+//   }
+// }
