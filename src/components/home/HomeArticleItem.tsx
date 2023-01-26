@@ -16,7 +16,7 @@ export default function HomeArticleItem({ post }: Props) {
       <Link 
         href={`/posts/${post.slug}`}
         css={linkStyle}
-        className="font-medium text-lg text-gray-700 border-b-2 border-green-300 border-opacity-0 hover:border-opacity-100 hover:text-green-400"
+        className="font-medium text-md text-gray-700 border-b-2 border-green-300 border-opacity-0 hover:border-opacity-100 hover:text-green-400"
         title={post.title}
         data-testid="latest-post-item"
       >
