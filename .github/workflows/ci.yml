@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Dependencies
-        uses: borales/actions-yarn@v1
+        uses: borales/actions-yarn@v4
         with:
           cmd: install
       - name: Start Unit Test
-        uses: borales/actions-yarn@v1
+        uses: borales/actions-yarn@v4
         with:
           cmd: test
