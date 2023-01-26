@@ -7,9 +7,10 @@
 }
 
 .content p {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   margin: 1.5rem 0 0 0;
+  line-height: 28px;
 }
 
 .content a {
@@ -129,12 +130,12 @@
 
 .content li {
   margin-top: 0.3rem;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .content li p {
   margin-top: 0;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .content abbr[title] {
@@ -180,7 +181,8 @@
   }
 
   .content p {
-    font-size: 21px;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   .content pre {
