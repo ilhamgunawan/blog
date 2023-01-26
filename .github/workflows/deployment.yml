@@ -1,0 +1,20 @@
+name: deploy-production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy-Production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+      - name: Build Project
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
