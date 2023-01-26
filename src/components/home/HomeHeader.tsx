@@ -8,7 +8,7 @@ export default function HomeHeader() {
     <section className="flex flex-col justify-start items-start">
       <h1 css={typeWriterStyles} className="font-bold text-3xl mb-3 mx-0 pr-1">Hi, I'm Ilham 👋🏻</h1>
       <Socials />
-      <p className="font-light text-2xl">Random thoughts and stuff.</p>
+      <p className="font-light text-base md:text-lg">Random thoughts and stuff.</p>
     </section>
   );
 }

@@ -63,12 +63,11 @@ export default function PostLayout({
       <div className="w-full px-4">
         <article className="flex-auto pt-4 pb-12">
           <header>
-            <h1 className="text-4xl mb-2">{title}</h1>
-            <div className="metadata font-normal text-gray-400">
-              <div className="inline-block">📅 <Date date={date} /></div>
-              {" | "}
-              <div className="inline-block">
-                <Author author={getAuthor(author)} />
+            <h1 className="text-4xl mb-4">{title}</h1>
+            <div className="metadata flex flex-col md:flex-row md:gap-3 font-normal text-gray-400">
+              <div className="inline-block" title="Created At">📅 <Date date={date} /></div>
+              <div className="inline-block" title="Author">
+                👨🏻‍💻 <Author author={getAuthor(author)} />
               </div>
             </div>
           </header>
