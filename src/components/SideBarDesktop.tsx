@@ -62,7 +62,9 @@ const DirectoryItem = (prop: { post: PostByYear }) => {
               color: #222;
               font-size: 0.8rem;
               font-weight: 600;
-              padding: 2px 8px;
+              width: 100%;
+              text-align: left;
+              padding: 4px 8px;
               margin-bottom: 5px;
               border-radius: 7.5px;
               transition: 0.05s;
@@ -83,12 +85,12 @@ const DirectoryItem = (prop: { post: PostByYear }) => {
             .directory-item-link {
               cursor: pointer;
               color: #222;
-              font-size: 0.8rem;
-              font-weight: 400;
-              padding: 2px 8px;
+              font-size: 14px;
+              font-weight: 500;
+              padding: 4px 8px;
               border-radius: 7.5px;
               transition: 0.05s;
-              width: fit-content;
+              width: 100%;
               overflow: hidden !important;
               text-overflow: ellipsis !important;
               display: -webkit-box !important;
@@ -104,7 +106,7 @@ const DirectoryItem = (prop: { post: PostByYear }) => {
           @media screen and (min-width: 1280px) {
             .directory-item-link,
             .directory-item-parent {
-              font-size: 1.1rem;
+              font-size: 16px;
             }
           }
         `}
@@ -125,15 +127,13 @@ export default function SideBarDesktop(prop: { postsByYear: PostByYear[] }) {
               🏠 Home
             </Link>
           </div>
-          <div className='directory'>
-            <nav className='directory-nav'>
-              <ul>
-                {prop.postsByYear.map((item, index) => (
-                  <DirectoryItem key={index} post={item} />
-                ))}
-              </ul>
-            </nav>
-          </div>
+          <nav className='directory-nav'>
+            <ul>
+              {prop.postsByYear.map((item, index) => (
+                <DirectoryItem key={index} post={item} />
+              ))}
+            </ul>
+          </nav>
         </aside>
         <style>
           {`
@@ -155,19 +155,17 @@ export default function SideBarDesktop(prop: { postsByYear: PostByYear[] }) {
 
               .header-link {
                 color: #222;
-                font-size: 1.1rem;
+                font-size: 16px;
                 font-weight: 600;
-                padding: 1.5px 11px;
+                display: inline-block;
+                width: 100%;
+                padding: 4px 8px;
                 border-radius: 7.5px;
                 transition: 0.05s;
               }
 
               .header-link:hover {
                 background-color: #eeecec;
-              }
-
-              .directory {
-                padding: 0.2rem;
               }
 
               .directory-title {

@@ -63,19 +63,17 @@ export default function MenuMobile(prop: {
             {"❎"}
           </button>
           <div className="mb-1">
-            <Link href='/' css={homeLinkStyle} className="font-bold text-lg" onClick={handleHideMenu}>
+            <Link href='/' css={homeLinkStyle} onClick={handleHideMenu}>
               🏠 Home
             </Link>
           </div>
-          <div className="p-1">
-            <nav>
-              <ul>
-                {prop.postsByYear.map((item, index) => (
-                  <DirectoryItem key={index} post={item} handleHideMenu={handleHideMenu} />
-                ))}
-              </ul>
-            </nav>
-          </div>
+          <nav>
+            <ul>
+              {prop.postsByYear.map((item, index) => (
+                <DirectoryItem key={index} post={item} handleHideMenu={handleHideMenu} />
+              ))}
+            </ul>
+          </nav>
         </div>
       </aside>
     );
@@ -114,7 +112,9 @@ const folderButtonStyle = css`
 
 const homeLinkStyle = css`
   color: #222;
-  padding: 1.5px 11px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 8px;
   border-radius: 7.5px;
   transition: 0.05s;
 
@@ -126,9 +126,9 @@ const homeLinkStyle = css`
 const directoryFolderStyle = css`
   cursor: pointer;
   color: #222;
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding: 2px 8px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 8px;
   margin-bottom: 5px;
   border-radius: 7.5px;
   transition: 0.05s;
@@ -150,9 +150,9 @@ const createPostContainerStyle = (isCollapsed: Boolean) => css`
 const createPostItemStyle = (isActive: Boolean) => css`
   cursor: pointer;
   color: #222;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 2px 8px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 4px 8px;
   border-radius: 7.5px;
   transition: 0.05s;
   width: fit-content;
