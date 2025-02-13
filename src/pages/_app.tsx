@@ -6,6 +6,7 @@ import "../../public/styles/font.css";
 import "../../public/styles/global.css";
 import React from "react";
 import NextNprogress from "nextjs-progressbar";
+import GoogleTagManager from "../components/analytics/GoogleTagManager";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
         height={3}
         showOnShallow={true}
       />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
       <Component {...pageProps} />
     </React.Fragment>
   );
